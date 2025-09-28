@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Sprint2.week2./static/css/main.f32ab613.css",
+    "main.js": "/Sprint2.week2./static/js/main.125798dc.js",
+    "static/js/58.37245648.chunk.js": "/Sprint2.week2./static/js/58.37245648.chunk.js",
+    "static/media/Montserrat-Regular.ttf": "/Sprint2.week2./static/media/Montserrat-Regular.cfbf0da06d33097e6d0a.ttf",
+    "index.html": "/Sprint2.week2./index.html",
+    "main.f32ab613.css.map": "/Sprint2.week2./static/css/main.f32ab613.css.map",
+    "main.125798dc.js.map": "/Sprint2.week2./static/js/main.125798dc.js.map",
+    "58.37245648.chunk.js.map": "/Sprint2.week2./static/js/58.37245648.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f32ab613.css",
+    "static/js/main.125798dc.js"
+  ]
+}
