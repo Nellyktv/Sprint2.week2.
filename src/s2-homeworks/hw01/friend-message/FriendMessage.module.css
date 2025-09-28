@@ -1,0 +1,78 @@
+.friendMessage {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: flex-start; /* сообщение слева */
+}
+
+.friendImageAndText {
+  display: flex;
+  gap: 25px;
+}
+
+.friendImageAndText img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  padding-bottom: 5px;
+}
+
+.friendText {
+  position: relative;
+  width: 414px;
+  height: 60px;
+  background-color: #f0f0f0; /* светлый фон */
+  border-radius: 10px;
+  padding: 10px 20px 10px 30px; /* отступ слева под хвостик */
+  box-sizing: border-box;
+  opacity: 1;
+  overflow: visible;
+  color: black;
+}
+
+.friendText::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -20px; /* хвостик слева */
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 30px 0 0;
+  border-color: transparent #f0f0f0 transparent transparent;
+  pointer-events: none;
+}
+
+.friendName {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-bottom: 5px;
+  color: black;
+}
+
+.friendMessageText {
+  font-family: Montserrat, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: black;
+}
+
+.friendTime {
+  font-family: Montserrat;
+  font-weight: 600;
+  font-size: 10px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  padding-left: 10px;
+  color: black;
+}
