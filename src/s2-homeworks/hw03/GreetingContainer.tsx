@@ -56,7 +56,7 @@ const GreetingContainer: React.FC<GreetingContainerPropsType> = ({
     // need to fix any
     setName(e.target.value); // need to fix
 
-    error && setError('');
+    setError('');
   };
   const addUser = () => {
     pureAddUser(name, setError, setName, addUserCallback);
