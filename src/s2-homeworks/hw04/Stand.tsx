@@ -10,10 +10,19 @@ const Stand = () => {
 
     const [stateForAllCheckboxes, setChecked] = useState<boolean>(false)
 
+    const handleEnter = () => {
+        if (stateForAllInputs.trim()) {
+            setError('')
+        } else {
+            setError('Error')
+        }
+        setValue('')
+    }
+
     return (
         <div id={'hw4-stand'} className={s.stand}>
             <div className={s.inputs}>
-                {/*совместим со старым кодом:*/}
+                {/* совместим со старым кодом: */}
                 <div>
                     <SuperInputText
                         id={'hw4-super-input-like-old'}
@@ -21,39 +30,35 @@ const Stand = () => {
                         onChange={(e) => setValue(e.currentTarget.value)}
                     />
                 </div>
-                {/*инпут с ошибкой:*/}
+
+                {/* инпут с ошибкой: */}
                 <div>
                     <SuperInputText
                         id={'hw4-super-input-with-error'}
                         value={stateForAllInputs}
                         onChangeText={setValue}
                         error={error}
-                        onEnter={() => {
-                            setError(
-                                stateForAllInputs.trim()
-                                    ? ''
-                                    : 'Error'
-                            )
-                            setValue('')
-                        }}
+                        onEnter={handleEnter}
                     />
                 </div>
             </div>
 
             <div className={s.buttons}>
-                {/*обычная кнопка:*/}
+                {/* обычная кнопка: */}
                 <div>
                     <SuperButton id={'hw4-super-button-default'}>
                         default
                     </SuperButton>
                 </div>
-                {/*красная кнопка:*/}
+
+                {/* красная кнопка: */}
                 <div>
                     <SuperButton id={'hw4-super-button-red'} xType={'red'}>
                         red
                     </SuperButton>
                 </div>
-                {/*задизэйбленная кнопка:*/}
+
+                {/* задизэйбленная кнопка: */}
                 <div>
                     <SuperButton
                         id={'hw4-super-button-disabled'}
@@ -63,7 +68,8 @@ const Stand = () => {
                         disabled
                     </SuperButton>
                 </div>
-                {/*задизэйбленная кнопка:*/}
+
+                {/* второстепенная кнопка: */}
                 <div>
                     <SuperButton
                         id={'hw4-super-button-secondary'}
@@ -75,7 +81,7 @@ const Stand = () => {
             </div>
 
             <div className={s.checkboxes}>
-                {/*чекбокс с текстом:*/}
+                {/* чекбокс с текстом: */}
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-with-text'}
@@ -85,7 +91,8 @@ const Stand = () => {
                         some text
                     </SuperCheckbox>
                 </div>
-                {/*совместим со старым кодом:*/}
+
+                {/* совместим со старым кодом: */}
                 <div>
                     <SuperCheckbox
                         id={'hw4-super-checkbox-like-old'}
