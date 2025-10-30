@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/Sprint2.week2./static/css/main.25373b13.css",
-    "main.js": "/Sprint2.week2./static/js/main.9d7a813d.js",
+    "main.js": "/Sprint2.week2./static/js/main.d7878385.js",
     "static/js/58.37245648.chunk.js": "/Sprint2.week2./static/js/58.37245648.chunk.js",
     "static/media/Montserrat-Regular.ttf": "/Sprint2.week2./static/media/Montserrat-Regular.cfbf0da06d33097e6d0a.ttf",
     "static/media/checked.svg": "/Sprint2.week2./static/media/checked.b75ca55e8759862b4083.svg",
     "index.html": "/Sprint2.week2./index.html",
     "main.25373b13.css.map": "/Sprint2.week2./static/css/main.25373b13.css.map",
-    "main.9d7a813d.js.map": "/Sprint2.week2./static/js/main.9d7a813d.js.map",
+    "main.d7878385.js.map": "/Sprint2.week2./static/js/main.d7878385.js.map",
     "58.37245648.chunk.js.map": "/Sprint2.week2./static/js/58.37245648.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.25373b13.css",
-    "static/js/main.9d7a813d.js"
+    "static/js/main.d7878385.js"
   ]
 }
