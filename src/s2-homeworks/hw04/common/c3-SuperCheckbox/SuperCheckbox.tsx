@@ -29,12 +29,15 @@ const SuperCheckbox: React.FC<SuperCheckboxPropsType> = ({
             <input
                 id={id}
                 type="checkbox"
-                onChange={onChangeCallback}
                 className={finalInputClassName}
+                onChange={onChangeCallback}
                 {...restProps}
             />
             {children && (
-                <span id={id ? id + '-span' : undefined} className={spanClassName}>
+                <span
+                    id={id ? id + '-span' : undefined}
+                    className={spanClassName || s.spanClassName}
+                >
                     {children}
                 </span>
             )}

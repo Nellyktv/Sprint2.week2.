@@ -1,27 +1,24 @@
 import React, { ButtonHTMLAttributes, DetailedHTMLProps } from 'react'
 import s from './SuperButton.module.css'
 
-// тип пропсов обычной кнопки
 type DefaultButtonPropsType = DetailedHTMLProps<ButtonHTMLAttributes<HTMLButtonElement>, HTMLButtonElement>
 
-// наши дополнительные пропсы
 type SuperButtonPropsType = DefaultButtonPropsType & {
-    xType?: 'red' | 'secondary'
+    xType?: 'red' | 'secondary' | 'default'
 }
 
 const SuperButton: React.FC<SuperButtonPropsType> = ({
     xType,
     className,
     disabled,
+    id,
     ...restProps
 }) => {
-    const finalClassName =
-        s.button +
-        (disabled ? ` ${s.disabled}` : xType === 'red' ? ` ${s.red}` : xType === 'secondary' ? ` ${s.secondary}` : '') +
-        (className ? ` ${className}` : '')
+    const finalClassName = `${s.button} ${disabled ? s.disabled : xType ? s[xType] : s.default}`
 
     return (
         <button
+            id={id}
             disabled={disabled}
             className={finalClassName}
             {...restProps}

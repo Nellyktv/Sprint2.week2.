@@ -1,23 +1,23 @@
-import React, { ChangeEvent, DetailedHTMLProps, InputHTMLAttributes, KeyboardEvent, ReactNode } from 'react'
+import React, { ChangeEvent, KeyboardEvent, DetailedHTMLProps, InputHTMLAttributes } from 'react'
 import s from './SuperInputText.module.css'
 
 type DefaultInputPropsType = DetailedHTMLProps<InputHTMLAttributes<HTMLInputElement>, HTMLInputElement>
 
-type SuperInputTextPropsType = Omit<DefaultInputPropsType, 'type'> & {
+type SuperInputTextPropsType = DefaultInputPropsType & {
     onChangeText?: (value: string) => void
     onEnter?: () => void
-    error?: ReactNode
+    error?: React.ReactNode
     spanClassName?: string
 }
 
 const SuperInputText: React.FC<SuperInputTextPropsType> = ({
+    type,
     onChange,
     onChangeText,
     onKeyDown,
     onEnter,
     error,
     className,
-    spanClassName,
     id,
     ...restProps
 }) => {
@@ -28,25 +28,30 @@ const SuperInputText: React.FC<SuperInputTextPropsType> = ({
 
     const onKeyDownCallback = (e: KeyboardEvent<HTMLInputElement>) => {
         onKeyDown?.(e)
-        if (e.key === 'Enter') onEnter?.()
+        if (e.key === 'Enter') {
+            onEnter?.()
+        }
     }
 
-    const finalSpanClassName = s.error + (spanClassName ? ` ${spanClassName}` : '')
-    const finalInputClassName = s.input + (error ? ` ${s.errorInput}` : ` ${s.superInput}`) + (className ? ` ${className}` : '')
+    const finalInputClassName = `${s.input} ${error ? s.errorInput : s.superInput}`
+
+    
 
     return (
         <div className={s.inputWrapper}>
             <input
                 id={id}
-                type="text"
+                type={type || 'text'}
                 onChange={onChangeCallback}
                 onKeyDown={onKeyDownCallback}
                 className={finalInputClassName}
                 {...restProps}
             />
-            <span id={id ? id + '-span' : undefined} className={finalSpanClassName}>
-                {error}
-            </span>
+            {error && (
+                <span id={id ? `${id}-span` : undefined} className={s.error}>
+                    {error}
+                </span>
+            )}
         </div>
     )
 }
